@@ -23,7 +23,7 @@ This folder contains the code and templates for the alignment of the exomes usin
 
 This folder contains the code used to filter and annotate the variants obtained according to quality criterions and the type of mutation. 
 
-## Statistical Analysis using SKAT
+### Statistical Analysis using SKAT
 
 This folder contains the R scripts used to carry out the association analysis using SKAT. 
 
