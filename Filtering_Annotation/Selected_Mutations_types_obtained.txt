@@ -1,0 +1,10 @@
+5_prime_UTR_premature_start_codon_gain_variant
+disruptive_inframe_deletion
+frameshift_variant
+inframe_deletion
+missense_variant
+missense_variant&splice_region_variant
+splice_acceptor_variant&intron_variant
+splice_donor_variant&intron_variant
+stop_gained
+stop_gained&inframe_insertion

@@ -1,0 +1,11 @@
+for file in *_ExAc_SnpEff.vcf; 
+do 
+
+filename=$(basename "$file")
+filename=${filename%.*}
+outfile="Selected_Muts/""$filename""_SelectedMuts.vcf"
+echo $outfile
+cat $file | grep ^# > $outfile #put the header
+grep -f Selected_Mutations_types_obtained.txt $file >> $outfile
+
+done 
