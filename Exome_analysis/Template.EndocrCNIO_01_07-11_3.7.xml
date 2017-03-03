@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- EXAMPLE RUBIOSEQ EXPERIMENT CONFIG FILE --> 
+<configData branch="SNV">
+	<!-- GENOME REFERENCE PATH :: MANDATORY -->
+	<GenRef>/local/htejero/HG19/hg19.fa</GenRef>
+	<!-- DBSNP ANNOTATION PATH :: MANDATORY -->
+	<DbSnpAnnot>/local/htejero/HG19/dbsnp_138.hg19.vcf</DbSnpAnnot>
+	<!-- 1000 Genomes ANNOTATION PATH :: MANDATORY -->
+	<Genomes1000Annot>/local/htejero/HG19/1000G_omni2.5.hg19.vcf</Genomes1000Annot>
+	<!-- REFSEQ ANNOTATION PATH :: MANDATORY -->
+	<IndelAnnot>/local/htejero/HG19/refseqhg19.rod</IndelAnnot>
+	<!-- INTERVALS PATH :: OPTIONAL -->
+	<Intervals>/local/htejero/EndocrCNIO/HUMAN_human.37_SureSelectHumanAllExon_51MB_hg19_GRCh37.v4_ELID_S03723314.bed</Intervals>
+	<!-- KNOWN INDELS FOR REALIGNING :: OPTIONAL -->
+	<KnownIndels>/local/htejero/HG19/Mills_and_1000G_gold_standard.indels.hg19.vcf</KnownIndels>
+	<!-- PLATFORM :: MANDATORY -->
+	<Platform>illumina</Platform>
+	<!-- checkCasava :: OPTIONAL. Set to 0 only if fastq reads have ascii33 qualities and they don't have standard Casava format   -->
+	<checkCasava>0</checkCasava>
+	<!-- OUTPUT DIRECTORY :: OPTIONAL, DEFAULT: Home directory -->
+	<dirOutBase>/local/htejero/EndocrCNIO/</dirOutBase>
+	<!-- PROJECT NAME :: MANDATORY -->
+	<ProjectId>outputEndocrCNIO1_7-11</ProjectId>
+	<!-- USER NAME :: OPTIONAL(default Undefined) -->
+	<!-- <UserName>htejero</UserName> -->
+	<!-- RAW DATA PATH :: MANDATORY -->
+	<InDirPreProcess>/local/htejero/EndocrCNIO/RawData2/</InDirPreProcess>	
+
+	<Sample>
+<!--		 SAMPLE NAME :: MANDATORY -->
+		<SampleName>11S0879</SampleName>
+		<SampleFiles>11S0879</SampleFiles>
+<!--		 SUFFIX :: MANDATORY -->
+		<SampleSuffix>.fastq</SampleSuffix>
+<!--		 READ TYPE - 1: single-end 2:paired-end :: MANDATORY -->
+		<SampleType>2</SampleType>
+		
+	</Sample>
+	
+	<Sample>
+<!--		 SAMPLE NAME :: MANDATORY -->
+		<SampleName>11S0983</SampleName>
+		<SampleFiles>11S0983</SampleFiles>
+<!--		 SUFFIX :: MANDATORY -->
+		<SampleSuffix>.fastq</SampleSuffix>
+<!--		 READ TYPE - 1: single-end 2:paired-end :: MANDATORY -->
+		<SampleType>2</SampleType>
+		
+	</Sample>
+
+
+<!--	<Sample>-->
+		<!-- SAMPLE NAME :: MANDATORY -->
+<!--		<SampleName>11S0997</SampleName>-->
+<!--		<SampleFiles>11S0997</SampleFiles>-->
+		<!-- SUFFIX :: MANDATORY -->
+<!--		<SampleSuffix>.fastq</SampleSuffix>-->
+		<!-- READ TYPE - 1: single-end 2:paired-end :: MANDATORY -->
+<!--		<SampleType>2</SampleType>-->
+<!--		-->
+<!--	</Sample>-->
+<!--	-->
+<!--	<Sample>-->
+		<!-- SAMPLE NAME :: MANDATORY -->
+<!--		<SampleName>11S1213</SampleName>-->
+<!--		<SampleFiles>11S1213</SampleFiles>-->
+		<!-- SUFFIX :: MANDATORY -->
+<!--		<SampleSuffix>.fastq</SampleSuffix>-->
+		<!-- READ TYPE - 1: single-end 2:paired-end :: MANDATORY -->
+<!--		<SampleType>2</SampleType>-->
+<!--		-->
+<!--	</Sample>-->
+<!--	-->
+<!--	<Sample>-->
+		<!-- SAMPLE NAME :: MANDATORY -->
+<!--		<SampleName>11S1258</SampleName>-->
+<!--		<SampleFiles>11S1258</SampleFiles>-->
+		<!-- SUFFIX :: MANDATORY -->
+<!--		<SampleSuffix>.fastq</SampleSuffix>-->
+		<!-- READ TYPE - 1: single-end 2:paired-end :: MANDATORY -->
+<!--		<SampleType>2</SampleType>-->
+<!--		-->
+<!--	</Sample>	-->
+
+	
+
+	<!-- CALL TYPE :: OPTIONAL (default BOTH) -->
+	<CallingType>BOTH</CallingType>
+		<!-- GATKoutputMode - variants:EMIT_VARIANTS_ONLY, others:EMIT_ALL_SITES, EMIT_ALL_CONFIDENT_SITES ::default (EMIT_VARIANTS_ONLY) -->
+	<GATKoutputMode>EMIT_ALL_SITES</GATKoutputMode>
+	<!-- Clean dbSNP output entries ::  1, clean dbSNPs (default 0) :: OPTIONAL -->
+	<rsFilter>0</rsFilter>
+	<!-- RUbioSeq_Mode Values: 0: standalone multisample, 1: joint multisample execution (default 0) :: OPTIONAL-->
+	<RUbioSeq_Mode>0</RUbioSeq_Mode>
+	<!-- Run fastqc analysis  ::  1, run analysis (default 0) :: OPTIONAL -->
+	<fastqc>1</fastqc>
+	<!-- Run TEQC analysis ::  1, convert file (default 0) :: OPTIONAL -->
+	<!--<bedTEQCFlag>0</bedTEQCFlag>-->
+	<!-- VEP analysis ::  1,execute analysis (default 0) :: OPTIONAL -->
+	<VEPFlag>1</VEPFlag>
+	<!-- Somatic indel detection analysis :: 1, execute analysis (default 0) :: OPTIONAL -->
+	<TCFlag>0</TCFlag>
+       <!-- Markduplicates flag (WARNING:: ONLY FOR ADVANCED USERS) Enable markduplicates step :: 1, Disable markduplicates step :: 0 (default 1) :: OPTIONAL -->
+	<MDFlag>1</MDFlag>
+	<!-- Minimum phred-scaled confidence threshold for calling (default 30.0) ::OPTIONAL -->
+	<standCallConf>30.0</standCallConf>
+	<!-- Minimum phred-scaled confidence threshold for emitting (default 30.0) ::OPTIONAL -->
+	<standEmitConf>30.0</standEmitConf>
+	<!-- Queue project :: OPTIONAL (default none) -->
+	<queueSGEProject>none</queueSGEProject>
+	<HardFilters>
+		<!-- VCF Depth filter :: OPTIONAL -->
+		<DPmin>15</DPmin>
+		<!-- VCF min quality filter :: OPTIONAL -->
+		<minQual>100</minQual>	
+		<!-- Optional. ONLY FOR ADVANCED USERS. Hard filter custom name -->
+		<!--<HfilterNameSNP>QDFilter</HfilterNameSNP>-->
+		<!-- Optional. ONLY FOR ADVANCED USERS. Hard filter custom rule -->
+		<!--<HfilterRuleSNP>QD&lt;2.0</HfilterRuleSNP>-->	
+	</HardFilters>
+</configData>
