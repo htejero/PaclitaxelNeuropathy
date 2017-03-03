@@ -9,7 +9,7 @@ This is the repository of the code used for the analysis carried out in the arti
 
 The objective of the article is to find rare variants associated to paclitaxel-induced neuropathy in patients with ovarian cancer. An extreme phenotype design has been used. 
 
-The study used 228 samples. 196 come from XXXXX and 32 from exome sequencing. 
+The study used 228 samples. 196 were processed using the TruSeq Custom Amplicon Kit (Illumina) covering the coding plus 25 bp intronic flanking region of 39 genes described in the paper. The other 32 samples come from exome sequencing. 
 
 ## Navigation 
 
